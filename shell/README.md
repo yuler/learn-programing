@@ -1,13 +1,7 @@
 # Learn Shell
-
 ## Refs
 
-- https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
-- (Shebang)[https://en.wikipedia.org/wiki/Shebang_(Unix)]
-- https://devdocs.io/bash/
-- https://learnxinyminutes.com/docs/bash/
-- devhints.io/bash
-## Basic
-
-- Hello World
-- Variables
+- [Bash Muanual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Learn X in Y minutes](https://learnxinyminutes.com/docs/bash/)
+- [Dev Hints](https://devhints.io/bash)
+- [Shebang Wiki](https://en.wikipedia.org/wiki/Shebang_(Unix))
