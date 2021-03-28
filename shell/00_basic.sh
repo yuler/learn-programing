@@ -3,6 +3,14 @@
 # Hello World
 echo Hello World!
 
+# Comment
+# Single line comment
+: '
+This is a
+multi line
+comment
+'
+
 # Variables
 NAME="yuler"
 echo $NAME
