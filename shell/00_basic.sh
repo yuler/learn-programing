@@ -17,6 +17,14 @@ echo $NAME
 echo "$NAME"
 echo "${NAME}!"
 
+# Built-in variables:
+echo "Last program's return value: $?"
+echo "Script's PID: $$"
+echo "Number of arguments passed to script: $#"
+echo "All arguments passed to script: $@"
+echo "Script's filename: $0"
+echo "Script's arguments separated into different variables: $1 $2..."
+
 # String quotes
 NAME="yuler"
 echo "Hi $NAME"  #=> Hi yuler
