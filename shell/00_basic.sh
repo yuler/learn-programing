@@ -54,13 +54,42 @@ elif [[ -n "$string" ]]; then
   echo "String is not empty"
 fi
 
-# Unofficial bash strict mode
-# refs: http://redsymbol.net/articles/unofficial-bash-strict-mode
-set -euo pipefail
-IFS=$'\n\t'
-
 # Brace expansion
 echo {A,B}  #=> A B
 echo {A,B}.js  #=> A.js B.js
 echo {1..5}  #=> 1 2 3 4 5
 echo {10..6}  #=> 10 9 8 7 6
+
+# Redirection
+echo "hello" > tmp.log                    # stdout to (file)
+echo "hello again" >> tmp.log             # stdout to (file), append
+not_exist_command 2> tmp_error.log        # stderr to (file)
+not_exist_command 2>&1                    # stderr to stdout
+not_exist_command 2>/dev/null             # stderr to (null)
+echo "ignore echo" &>/dev/null            # stdout and stderr to (null)
+
+cat > tmp.log <(echo "#helloworld")
+echo "#helloworld" > tmp.log
+echo "#helloworld" | cat > tmp.log
+echo "#helloworld" | tee tmp.log >/dev/null
+
+# Heredoc
+cat << EOF
+The current working directory is: $PWD
+You are logged in as: $(whoami)
+EOF
+
+# Printf
+printf "Hello %s, I'm %s" everyone yuler  #=> Hello everyone, I'm yuler
+printf "1 + 1 = %d"                       #=> "1 + 1 = 2" 
+printf "Print a float: %f" 2              #=> Print a float: 2.000000
+
+# Reading input
+echo -n "Proceed? [y/n]: "
+read ans
+echo $ans
+
+# Unofficial bash strict mode
+# refs: http://redsymbol.net/articles/unofficial-bash-strict-mode
+set -euo pipefail
+IFS=$'\n\t'
