@@ -21,9 +21,11 @@ echo "${NAME}!"
 echo "Last program's return value: $?"
 echo "Script's PID: $$"
 echo "Number of arguments passed to script: $#"
-echo "All arguments passed to script: $@"
+echo "All arguments passed to script (as a single word): $*"
+echo "All arguments passed to script (as separate strings): $@"
 echo "Script's filename: $0"
 echo "Script's arguments separated into different variables: $1 $2..."
+echo "Last argument of the previous command: $_"
 
 # String quotes
 NAME="yuler"
@@ -36,7 +38,7 @@ echo "I'm in `pwd`"
 
 # Conditional execution
 ls -al && echo "Currnt working directory is: `pwd`"
-not_exist_command || echo "Command doesn't exist"
+not_exist_command 2> /dev/null || echo "Command doesn't exist"
 
 # Functions
 get_name() {
