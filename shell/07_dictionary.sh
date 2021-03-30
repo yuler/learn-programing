@@ -12,11 +12,11 @@ sounds[bird]="tweet"
 sounds[wolf]="howl"
 
 # Working with dictionaries
-echo ${sounds[dog]}     #=> Dog's sound
-echo ${sounds[@]}       #=> All values
-echo ${!sounds[@]}      #=> All keys
-echo ${#sounds[@]}      #=> Number of elements
-unset sounds[dog]       #=> Delete dog
+echo ${sounds[dog]}     # Dog's sound
+echo ${sounds[@]}       # All values
+echo ${!sounds[@]}      # All keys
+echo ${#sounds[@]}      # Number of elements
+unset sounds[dog]       # Delete dog
 
 # Iteration
 for key in ${!sounds[@]} ; do
